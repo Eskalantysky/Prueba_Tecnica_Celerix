@@ -5,10 +5,8 @@ import logging
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 
-# Configurar logs
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Cargar variables de entorno
 load_dotenv()
 
 def load_csv_to_postgres():
@@ -20,15 +18,12 @@ def load_csv_to_postgres():
     db_password = os.getenv("POSTGRES_PASSWORD", "password")
     
     try:
-        # Leer CSV
         file_path = "data/data.csv"
         df = pd.read_csv(file_path)
         logging.info(f"Archivo CSV leído correctamente con {len(df)} filas.")
         
-        # Conectar a PostgreSQL
         engine = create_engine(f'postgresql://{db_user}:{db_password}@{db_host}:5432/{db_name}')
         
-        # Cargar datos a PostgreSQL
         df.to_sql('tabla_principal', engine, if_exists='replace', index=False)
         logging.info("Datos cargados exitosamente en PostgreSQL.")
     
