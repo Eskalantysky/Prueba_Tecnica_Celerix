@@ -1,2 +1,5 @@
-# Prueba_T-cnica_Celerix
-Acá se montará la prueba técnica que se hará para la empresa Celerix como la vacante para Analista de Datos
+# Prueba_Tecnica_Celerix
+
+1. primero descarga del repositorio la aplicación completa, se encontrará dos carpetas llamada Parte1 y Parte2, respectivamente.
+
+<pre> Hola mundo </pre>
