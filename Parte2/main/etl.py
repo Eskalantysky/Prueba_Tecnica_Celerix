@@ -2,12 +2,38 @@ import pandas as pd
 import psycopg2
 import os
 import logging
+import time
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 load_dotenv()
+
+def wait_for_db():
+    db_host = os.getenv("POSTGRES_HOST", "db")
+    db_name = os.getenv("POSTGRES_DB", "etl_db")
+    db_user = os.getenv("POSTGRES_USER", "user")
+    db_password = os.getenv("POSTGRES_PASSWORD", "password")
+    
+    logging.info("Esperando a que PostgreSQL esté disponible...")
+    
+    for _ in range(10):  # Reintenta por 50 segundos (10 intentos x 5 seg cada uno)
+        try:
+            conn = psycopg2.connect(
+                host=db_host,
+                database=db_name,
+                user=db_user,
+                password=db_password
+            )
+            conn.close()
+            logging.info("Base de datos lista. Continuando con ETL...")
+            return
+        except psycopg2.OperationalError:
+            logging.warning("Base de datos no disponible. Reintentando en 5 segundos...")
+            time.sleep(5)
+    
+    logging.error("No se pudo conectar a la base de datos después de varios intentos.")
 
 def load_csv_to_postgres():
     logging.info("Iniciando proceso ETL...")
@@ -33,4 +59,5 @@ def load_csv_to_postgres():
     logging.info("Proceso ETL finalizado.")
     
 if __name__ == "__main__":
+    wait_for_db()
     load_csv_to_postgres()

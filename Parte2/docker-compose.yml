@@ -25,6 +25,7 @@ services:
       POSTGRES_PASSWORD: password
     volumes:
       - .:/app
+    entrypoint: ["python", "main/etl.py"]
 
 volumes:
   pg_data:
