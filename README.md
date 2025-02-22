@@ -55,7 +55,7 @@ Para salir del servidor solo escribe:
 <pre>\q</pre>
 
 
-## Comando Auxiliares
+## Comandos Auxiliares
 <pre>docker compose down -v  # Elimina los contenedores y volúmenes asociados</pre>
 <pre>docker system prune -a  # Elimina todas las imágenes y contenedores detenidos</pre>
 <pre>docker ps -a            # Lista todos los contenedores</pre>
