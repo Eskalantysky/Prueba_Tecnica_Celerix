@@ -4,7 +4,7 @@ Este repositorio contiene dos carpetas denominadas `Parte1` y `Parte2`, además 
 
 ## Clonación del Repositorio
 
-Para comenzar, abra una consola o terminal en un equipo que tenga `Git` instalado y tener una versión de python superior a 3.10. Ubíquese en la ruta donde desea descargar el repositorio y ejecute el siguiente comando:
+Para comenzar, abra una consola o terminal en un equipo que tenga `Git` instalado y tener una versión de `python superior a 3.10`. Ubíquese en la ruta donde desea descargar el repositorio y ejecute el siguiente comando:
 
 <pre>git clone https://github.com/Eskalantysky/Prueba_Tecnica_Celerix.git</pre>
 
