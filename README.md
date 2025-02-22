@@ -47,10 +47,11 @@ Se le mostrará una nueva terminal esperando indicaciones como
 
 En aquella terminal espera que le de instrucción para algun consulta.
 Quiero aclarar que desde el etl.py la tabla creada se llama `tabla_principal`, por lo tanto se puede hacer una consulta de SQL como por ejemplo:
-<pre>SELECT * FROM tabla_principal LIMIT 10;</pre> 
+<pre>SELECT * FROM tabla_principal LIMIT 10;</pre>
 
 Una vez que ingrese la consulta, se puede decir que el servidor está funcionando adecuadamente.
-Para salir de la terminal solo escribe:
+
+Para salir del servidor solo escribe:
 <pre>\q</pre>
 
 
