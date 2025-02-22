@@ -56,6 +56,6 @@ Para salir del servidor solo escribe:
 
 
 ## Comando Auxiliares
-docker compose down -v  # Elimina los contenedores y volúmenes asociados
-docker system prune -a  # Elimina todas las imágenes y contenedores detenidos
-docker ps -a            # Lista todos los contenedores
+<pre>docker compose down -v</pre>  # Elimina los contenedores y volúmenes asociados
+<pre>docker system prune -a</pre>  # Elimina todas las imágenes y contenedores detenidos
+<pre>docker ps -a</pre>            # Lista todos los contenedores
