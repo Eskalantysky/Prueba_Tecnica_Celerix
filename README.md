@@ -45,7 +45,7 @@ Este comando permite conectarse a la base de datos PostgreSQL dentro del contene
 Se le mostrará una nueva terminal esperando indicaciones como 
 <pre>etl_db #</pre>
 
-En aquella terminal espera que le de instrucción para algun consulta.
+En aquella terminal espera que le de instrucción para alguna consulta en SQL.
 Quiero aclarar que desde el etl.py la tabla creada se llama `tabla_principal`, por lo tanto se puede hacer una consulta de SQL como por ejemplo:
 <pre>SELECT * FROM tabla_principal LIMIT 10;</pre>
 
